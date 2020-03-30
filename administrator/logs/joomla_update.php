@@ -31,3 +31,5 @@
 2020-03-30T19:23:07+00:00	INFO ::1	update	Deleting removed files and folders.
 2020-03-30T19:23:08+00:00	INFO ::1	update	Cleaning up after installation.
 2020-03-30T19:23:08+00:00	INFO ::1	update	Update to version 3.9.16 is complete.
+2020-03-30T19:25:26+00:00	INFO ::1	update	Downloading update file from https://github.com/joomla/joomla-cms/releases/download/3.9.16/Joomla_3.9.16-Stable-Update_Package.zip.
+2020-03-30T19:26:02+00:00	INFO ::1	update	File Joomla_3.9.16-Stable-Update_Package.zip downloaded.
