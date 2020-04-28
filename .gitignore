@@ -1,1 +1,3 @@
+.idea/*
+.gitignore
 configuration.php
