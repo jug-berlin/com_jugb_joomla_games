@@ -20,7 +20,7 @@ use \Joomla\CMS\Language\Text;
  *
  * @since  1.6
  */
-class Jugb_joomla_gamesViewJoomlagames_raketein extends \Joomla\CMS\MVC\View\HtmlView
+class jugb_joomla_gamesViewjoomlagame_raketein extends \Joomla\CMS\MVC\View\HtmlView
 {
 	protected $state;
 
@@ -50,7 +50,7 @@ class Jugb_joomla_gamesViewJoomlagames_raketein extends \Joomla\CMS\MVC\View\Htm
 
 		if (!empty($this->item))
 		{
-			
+
 		}
 
 		// Check for errors.
@@ -59,7 +59,7 @@ class Jugb_joomla_gamesViewJoomlagames_raketein extends \Joomla\CMS\MVC\View\Htm
 			throw new Exception(implode("\n", $errors));
 		}
 
-		
+
 
 		if ($this->_layout == 'edit')
 		{

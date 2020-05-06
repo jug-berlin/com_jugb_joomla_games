@@ -12,16 +12,15 @@ defined('_JEXEC') or die;
 use Joomla\CMS\Factory;
 $document = Factory::getDocument();
 
-$document->addStyleSheet('/media/com_jugb_joomla_games/css/rakete-in.css');
-$document->addScript('/media/com_jugb_joomla_games/js/rakete-in.js');
+$document->addStyleSheet('media/com_jugb_joomla_games/css/rakete-in.css');
+$document->addScript('media/com_jugb_joomla_games/js/rakete-in.js');
 
 ?>
 
-<div class="raketeinwrap">
-    hallo welt
+<div class="raketein__wrap" id="raketein__wrap">
 
 
-
+	<div id="raketein__raketein"></div>
 
 
 

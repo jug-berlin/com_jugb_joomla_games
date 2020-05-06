@@ -1,0 +1,20 @@
+
+.raketein__wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid #0f0;
+  background: #333d53;
+  z-index: 9;
+}
+
+#raketein__raketein {
+  background-color: #f00;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: 20px;
+  left: calc(50vw - 1rem);
+}
