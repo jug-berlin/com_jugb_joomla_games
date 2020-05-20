@@ -6,6 +6,7 @@
   width: 100vw;
   height: 100vh;
   border: 1px solid #0f0;
+  box-sizing: border-box;
   background: #333d53;
   z-index: 9;
 }
@@ -17,4 +18,13 @@
   position: absolute;
   top: 20px;
   left: calc(50vw - 1rem);
+}
+
+#status__wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  width: 300px;
+  background-color: #fff;
 }

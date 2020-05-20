@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<metadata>
-	<layout title="COM_JUGB_JOOMLA_GAMES_TITLE_LIST_VIEW_JOOMLAGAMESGAMES" option="View">
-        <message>
-                        <![CDATA[COM_JUGB_JOOMLA_GAMES_TITLE_LIST_VIEW_JOOMLAGAMESGAMES_DESC]]>
-        </message>
-	</layout>
-</metadata>

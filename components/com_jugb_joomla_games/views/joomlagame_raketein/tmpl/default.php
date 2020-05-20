@@ -10,6 +10,7 @@
 defined('_JEXEC') or die;
 
 use Joomla\CMS\Factory;
+
 $document = Factory::getDocument();
 
 $document->addStyleSheet('media/com_jugb_joomla_games/css/rakete-in.css');
@@ -22,10 +23,15 @@ $document->addScript('media/com_jugb_joomla_games/js/rakete-in.js');
 
 	<div id="raketein__raketein"></div>
 
-
-
-
-
-
+	<div id="status__wrap">
+		<dl>
+			<dt>Höhe:</dt>
+			<dd id="status__hoehe"></dd>
+			<dt>Geschwindigkeit:</dt>
+			<dd id="status__geschwindigkeit"></dd>
+			<dt>Treibstoff:</dt>
+			<dd id="status__treibstoff"></dd>
+		</dl>
+	</div>
 
 </div>
