@@ -1,5 +1,7 @@
 
 let raketeInParams = {};
+let unendlichenweiten;
+let statusHoehe;
 
 function raketeInBeschleunigung(raketeIn) {
 
@@ -53,9 +55,6 @@ function raketeInBeschleunigung(raketeIn) {
 
 function statusAusgabeIn() {
 
-	let statusHoehe = document.getElementById("status__hoehe");
-	let unendlichenweiten = document.getElementById("raketein__wrap");
-
 	statusHoehe.innerHTML = parseFloat(unendlichenweiten.offsetHeight) - raketeInParams['aktuelleHoehe'] - raketeInParams['raketeInHoehe'];
 
 }
@@ -65,7 +64,8 @@ document.addEventListener( 'DOMContentLoaded', function () {
 	const raketeIn = document.getElementById("raketein__raketein");
 	raketeIn.style.top = '0px';
 
-	const unendlichenweiten = document.getElementById("raketein__wrap");
+	unendlichenweiten = document.getElementById("raketein__wrap");
+	statusHoehe = document.getElementById("status__hoehe");
 
 	raketeInParams = {
 		'unendlichenweitenHoehe'  	: parseFloat(unendlichenweiten.offsetHeight),
