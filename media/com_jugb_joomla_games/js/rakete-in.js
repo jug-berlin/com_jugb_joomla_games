@@ -1,20 +1,29 @@
 
-let raketeInParams = {};
-let unendlichenweiten;
-let statusHoehe;
+let raketeInParams = {},
+	unendlichenweiten,
+	statusHoehe,
+	statusGeschwindigkeit,
+	statusTreibstoff,
+	raketeInTriebwerk1,
+	raketeInTriebwerk2,
+	raketeInFlamme1,
+	raketeInFlamme2;
 
 function raketeInBeschleunigung(raketeIn) {
 
 	let aktuellePos = parseFloat(raketeIn.style.top);
 
-	if (raketeInParams['negativeBeschleunigung'] == 0) {
+	if (raketeInParams['negativeBeschleunigung'] == 0 || raketeInParams['treibstoff'] < 10) {
 		raketeInParams['aktuelleGeschwindigkeit'] += raketeInParams['anziehungsKraft'] / 100;
 		console.log('raketeInParams[\'aktuelleGeschwindigkeit\']', raketeInParams['aktuelleGeschwindigkeit']);
 	} else {
 
 		let geschwindigkeit = raketeInParams['anziehungsKraft'] /50;
-		if (raketeInParams['negativeBeschleunigung'] == 2) {
+		raketeInParams['treibstoff'] -= 10;
+
+		if (raketeInParams['negativeBeschleunigung'] == 2 && raketeInParams['treibstoff'] >= 10) {
 			geschwindigkeit = geschwindigkeit *2;
+			raketeInParams['treibstoff'] -= 10;
 		}
 
 		raketeInParams['aktuelleGeschwindigkeit'] -= geschwindigkeit;
@@ -41,12 +50,13 @@ function raketeInBeschleunigung(raketeIn) {
 		if (raketeInParams['fehler']) {
 			console.log(raketeInParams['fehler']);
 		} else {
+
 			if (raketeInParams['aktuelleGeschwindigkeit'] > 10) {
-				alert('BOOOOOMMMMMM!!!! Leider alle tot, schade. DU LooserIn!');
+				raketeIn.classList.add('raketeIn--explosion');
 			} else {
 				alert('You can be my hero babyR');
 			}
-			alert(raketeInParams['aktuelleGeschwindigkeit']);
+
 		}
 
 	}
@@ -55,8 +65,20 @@ function raketeInBeschleunigung(raketeIn) {
 
 function statusAusgabeIn() {
 
-	statusHoehe.innerHTML = parseFloat(unendlichenweiten.offsetHeight) - raketeInParams['aktuelleHoehe'] - raketeInParams['raketeInHoehe'];
+	statusHoehe.innerHTML = (parseFloat(unendlichenweiten.offsetHeight) - raketeInParams['aktuelleHoehe'] - raketeInParams['raketeInHoehe']).toFixed(2) + ' romPonds';
+	statusGeschwindigkeit.innerHTML = raketeInParams['aktuelleGeschwindigkeit'].toFixed(2) + ' quta/s';
+	statusTreibstoff.innerHTML = raketeInParams['treibstoff'] + ' galis';
 
+}
+
+function raketenInFlammeIn(staerke) {
+
+	if (raketeInParams['treibstoff'] < 10) {
+		staerke = '0';
+	}
+
+	raketeInFlamme1.style.opacity = staerke;
+	raketeInFlamme2.style.opacity = staerke;
 }
 
 document.addEventListener( 'DOMContentLoaded', function () {
@@ -66,13 +88,19 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 	unendlichenweiten = document.getElementById("raketein__wrap");
 	statusHoehe = document.getElementById("status__hoehe");
+	statusGeschwindigkeit = document.getElementById("status__geschwindigkeit");
+	statusTreibstoff = document.getElementById("status__treibstoff");
+	raketeInTriebwerk1 = document.getElementById("raketein__triebwerk1");
+	raketeInTriebwerk2 = document.getElementById("raketein__triebwerk2");
+	raketeInFlamme1 = document.getElementById("raketein__flamme1");
+	raketeInFlamme2 = document.getElementById("raketein__flamme2");
 
 	raketeInParams = {
 		'unendlichenweitenHoehe'  	: parseFloat(unendlichenweiten.offsetHeight),
 		'raketeInHoehe' 			: parseFloat(raketeIn.offsetHeight),
 		'aktuelleHoehe'				: 0,
-		'treibstoffKapazitaet'		: 10000,
-		'treibstoff'				: 10000,
+		'treibstoffKapazitaet'		: parseFloat(unendlichenweiten.offsetHeight) * 10,
+		'treibstoff'				: parseFloat(unendlichenweiten.offsetHeight) * 10,
 		'anziehungsKraft'			: 9.81,
 		'aktuelleGeschwindigkeit'	: 0,
 		'negativeBeschleunigung'	: 0,
@@ -94,6 +122,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 				break;
 			case 38:
 				raketeInParams['negativeBeschleunigung'] = 1;
+				raketenInFlammeIn('0.6');
 				break;
 			case 39:
 				alert('right');
@@ -103,6 +132,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 				break;
 			case 32:
 				raketeInParams['negativeBeschleunigung'] = 2;
+				raketenInFlammeIn('1');
 				break;
 		}
 	}
@@ -114,6 +144,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 				break;
 			case 38:
 				raketeInParams['negativeBeschleunigung'] = 0;
+				raketenInFlammeIn('0');
 				break;
 			case 39:
 				alert('right');
@@ -123,6 +154,7 @@ document.addEventListener( 'DOMContentLoaded', function () {
 				break;
 			case 32:
 				raketeInParams['negativeBeschleunigung'] = 0;
+				raketenInFlammeIn('0');
 				break;
 		}
 	}

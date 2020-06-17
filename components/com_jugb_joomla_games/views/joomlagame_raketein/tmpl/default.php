@@ -21,7 +21,15 @@ $document->addScript('media/com_jugb_joomla_games/js/rakete-in.js');
 <div class="raketein__wrap" id="raketein__wrap">
 
 
-	<div id="raketein__raketein"></div>
+	<div id="raketein__raketein">
+		<div id="raketein__raketein__raketein"></div>
+		<div id="raketein__triebwerk1" class="raketein__triebwerk">
+			<div id="raketein__flamme1" class="raketein__flamme"></div>
+		</div>
+		<div id="raketein__triebwerk2" class="raketein__triebwerk">
+			<div id="raketein__flamme2" class="raketein__flamme"></div>
+		</div>
+	</div>
 
 	<div id="status__wrap">
 		<dl>

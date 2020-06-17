@@ -7,17 +7,75 @@
   height: 100vh;
   border: 1px solid #0f0;
   box-sizing: border-box;
-  background: #333d53;
+  background: #100f46;
   z-index: 9;
 }
 
-#raketein__raketein {
+#raketein__raketein__raketein {
   background-color: #f00;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 4rem;
   position: absolute;
   top: 20px;
   left: calc(50vw - 1rem);
+  margin-top: -0.5rem;
+  border-radius: 100% 100% 60% 60%;
+}
+
+#raketein__raketein__raketein:after {
+  content: '';
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 0.5rem;
+  top: 1.3rem;
+}
+
+#raketein__raketein__raketein:before {
+  content: '';
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.raketein__triebwerk {
+  background-color: #d02727;
+  width: 1rem;
+  height: 2rem;
+  position: absolute;
+  top: 2.5rem;
+  left: -1rem;
+  border-radius: 100% 0 0 60%;
+
+}
+
+#raketein__triebwerk2 {
+  left: auto;
+  right: -1rem;
+  border-radius: 0 100% 60% 0;
+}
+
+.raketein__flamme {
+  box-shadow: 0 0 17px 10px #efff00;
+  height: 1px;
+  width: 0.7rem;
+  position: absolute;
+  top: 2rem;
+  background-color: #efff00;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+#raketein__flamme1 {
+  left: 0.3rem;
 }
 
 #status__wrap {
@@ -27,4 +85,42 @@
   padding: 1rem;
   width: 300px;
   background-color: #fff;
+}
+
+.raketeIn--explosion {
+  animation: explosion 2s linear;
+  animation-fill-mode: forwards;
+}
+
+.raketeIn--explosion #raketein__triebwerk1 {
+  position: fixed;
+  animation: expl-triebwerk1 2s linear;
+  animation-fill-mode: forwards;
+}
+
+.raketeIn--explosion #raketein__triebwerk2 {
+  animation: expl-triebwerk2 2s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes explosion {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(160deg);
+  }
+}
+
+@keyframes expl-triebwerk1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    bottom: 3rem;
+  }
+  100% {
+    transform: rotate(360deg);
+    left: -20vw;
+  }
 }
