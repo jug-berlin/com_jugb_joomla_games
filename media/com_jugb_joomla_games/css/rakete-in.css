@@ -11,7 +11,7 @@
   z-index: 9;
 }
 
-#raketein__raketein__raketein {
+#raketein__raketein {
   background-color: #f00;
   width: 1.5rem;
   height: 4rem;
@@ -22,7 +22,7 @@
   border-radius: 100% 100% 60% 60%;
 }
 
-#raketein__raketein__raketein:after {
+#raketein__raketein:after {
   content: '';
   display: block;
   width: 0.5rem;
@@ -34,7 +34,7 @@
   top: 1.3rem;
 }
 
-#raketein__raketein__raketein:before {
+#raketein__raketein:before {
   content: '';
   display: block;
   width: 0.5rem;
@@ -93,7 +93,6 @@
 }
 
 .raketeIn--explosion #raketein__triebwerk1 {
-  position: fixed;
   animation: expl-triebwerk1 2s linear;
   animation-fill-mode: forwards;
 }
